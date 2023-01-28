@@ -19,23 +19,7 @@ const ReactDOM = createRoot(document.getElementById('app'));
     console.log(visibleExpense);
 }) */
 
-store.dispatch(addExpense({
-    description : 'Water bill',
-    amount : 1000,
-    createdAt: 1000
-}));
 
-store.dispatch(addExpense({
-    description : 'Gas bill',
-    amount : 3500,
-    createdAt: 2000
-}));
-
-store.dispatch(addExpense({
-    description : 'Rent',
-    amount : 15000,
-    createdAt: 1500
-}));
 
 /* store.dispatch(setTextFilter('bill'));
 store.dispatch(setTextFilter('water'));
@@ -45,8 +29,7 @@ setTimeout(() => {
 }, 3000); */
 
 const state = store.getState();
-const visibleExpense = getVisibleExpenses(state.expenses, state.filters);
-console.log(visibleExpense);
+
 
 const jsx =  (
     <Provider store={store}>
