@@ -1,0 +1,3 @@
+npx babel .\src\playground\es6-class-1.js --out-file=./public/scripts/app.js --watch
+npx live-server public
+npx babel .\src\app.js --out-file=./public/scripts/app.js --watch
