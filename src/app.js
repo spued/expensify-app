@@ -13,23 +13,7 @@ import 'react-dates/lib/css/_datepicker.css';
 const store = configureStore();
 const ReactDOM = createRoot(document.getElementById('app'));
 
-/* const subscribe = store.subscribe(() => {
-    const state = store.getState();
-    const visibleExpense = getVisibleExpenses(state.expenses, state.filters);
-    console.log(visibleExpense);
-}) */
-
-
-
-/* store.dispatch(setTextFilter('bill'));
-store.dispatch(setTextFilter('water'));
-
-setTimeout(() => {
-    store.dispatch(setTextFilter('bill'));
-}, 3000); */
-
 const state = store.getState();
-
 
 const jsx =  (
     <Provider store={store}>
