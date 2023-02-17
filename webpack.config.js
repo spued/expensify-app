@@ -1,11 +1,14 @@
 const path = require("path");
 const TerserPlugin = require( 'terser-webpack-plugin-legacy' );
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+
 module.exports = (env) => {
 
     const isProduction = env == 'production';
     const CSSExtract = new ExtractTextPlugin('styles.css');
     //console.log('env', env);
+    
     return {
         entry : "./src/app.js",
         output : {
@@ -40,7 +43,10 @@ module.exports = (env) => {
             }]
         },
         plugins : [
-            CSSExtract
+            CSSExtract,
+            new TerserPlugin({
+                sourceMap: true
+            })
         ],
         devtool: isProduction ? 'source-map' : 'inline-source-map',
         devServer: {
@@ -54,6 +60,7 @@ module.exports = (env) => {
                 })
             ]
         } */
+        
     }
 };
 
