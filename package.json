@@ -11,6 +11,7 @@
     "css-loader": "^0.28.4",
     "enzyme": "^3.11.0",
     "enzyme-to-json": "^3.6.2",
+    "express": "^4.15.4",
     "extract-text-webpack-plugin": "^3.0.0",
     "jest": "^29.3.1",
     "live-server": "^1.2.2",
@@ -50,7 +51,9 @@
     "build:dev": "webpack",
     "build:prod": "webpack -p --env production",
     "dev-server": "webpack-dev-server",
-    "test": "jest --config=jest.config.json"
+    "test": "jest --config=jest.config.json",
+    "start" : "node server/server.js",
+    "heroku-postbuild" : "npm run build:prod"
   },
   "author": "Sunya J.",
   "license": "ISC"
