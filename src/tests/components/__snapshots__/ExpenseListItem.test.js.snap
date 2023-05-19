@@ -2,46 +2,32 @@
 
 exports[`Should see the right expense 1`] = `
 <div>
-  id == undefined ? (
+  <Link
+    to="/edit/1"
+  >
+    <h3>
+      Gum
+    </h3>
+  </Link>
   <p>
-    Empty object.
+    $1.95
+    -
+    January 1st, 1970
   </p>
-  ) : (
-  <p>
-    <Link
-      to="/edit/1"
-    >
-      <h3>
-        Gum
-      </h3>
-    </Link>
-    <p>
-      195
-       - 
-      0
-    </p>
-  </p>
-  )
 </div>
 `;
 
 exports[`Should see the right expense 2`] = `
 <div>
-  id == undefined ? (
+  <Link
+    to="/edit/undefined"
+  >
+    <h3 />
+  </Link>
   <p>
-    Empty object.
+    $0.00
+    -
+    May 19th, 2023
   </p>
-  ) : (
-  <p>
-    <Link
-      to="/edit/undefined"
-    >
-      <h3 />
-    </Link>
-    <p>
-       - 
-    </p>
-  </p>
-  )
 </div>
 `;
