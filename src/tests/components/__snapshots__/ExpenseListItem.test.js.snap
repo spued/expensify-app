@@ -27,7 +27,7 @@ exports[`Should see the right expense 2`] = `
   <p>
     $0.00
     -
-    May 24th, 2023
+    May 25th, 2023
   </p>
 </div>
 `;

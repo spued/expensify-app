@@ -10,10 +10,11 @@ exports[`Should render edit expense page correctly 1`] = `
         "amount": 4500,
         "createdAt": 345600000,
         "description": "Credit cards",
-        "id": 3,
+        "id": "3",
         "note": "",
       }
     }
+    onRemove={[Function]}
     onSubmit={[Function]}
   />
   <button
