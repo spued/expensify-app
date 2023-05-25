@@ -8,9 +8,9 @@ exports[`Show render header correctly 1`] = `
   <NavLink
     activeClassName="is-active"
     exact={true}
-    to="/"
+    to="/dashboard"
   >
-     Dashboard
+     Dashboard 
   </NavLink>
   <NavLink
     activeClassName="is-active"
@@ -30,5 +30,10 @@ exports[`Show render header correctly 1`] = `
   >
      Help 
   </NavLink>
+  <button
+    onClick={[Function]}
+  >
+    Logout
+  </button>
 </header>
 `;

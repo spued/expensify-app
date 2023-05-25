@@ -1,5 +1,6 @@
 import firebase from "firebase/app";
 import "firebase/database";
+import "firebase/auth";
 
 
 // Your web app's Firebase configuration
@@ -15,8 +16,9 @@ const firebaseConfig = {
   
 firebase.initializeApp(firebaseConfig);
 const db = firebase.database();
+const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
 
-export { firebase , db as default};
+export { firebase , googleAuthProvider, db as default};
 
   /* // child_removed
   db.ref('expenses').on('child_removed', (snapshot) => {

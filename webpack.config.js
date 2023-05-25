@@ -1,6 +1,6 @@
 const path = require("path");
 const webpack = require("webpack")
-const TerserPlugin = require( 'terser-webpack-plugin-legacy' );
+//const TerserPlugin = require( 'terser-webpack-plugin-legacy' );
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 //const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
@@ -20,16 +20,15 @@ module.exports = (env) => {
     return {
         entry : "./src/app.js",
         output : {
-            "path" : path.join(__dirname + '/public'),
-            "filename" : "bundle.js",
-            //"publicPath": "/public"        
+            "path" : path.resolve(__dirname, 'public/'),
+            "filename" : "bundle.js"
         },
         module: {
             rules : [
                 {
-                    loader : 'babel-loader',
                     test : /\.js$/,
-                    exclude : /node_modules/
+                    exclude : /node_modules/,
+                    loader : 'babel-loader'
             },
             {
                 test:/\.s?css$/,
@@ -53,9 +52,9 @@ module.exports = (env) => {
         },
         plugins : [
             CSSExtract,
-            new TerserPlugin({
+            /* new TerserPlugin({
                 sourceMap: true
-            }),
+            }), */
             new webpack.DefinePlugin({
                 'process.env.FIREBASE_API_KEY' : JSON.stringify(process.env.FIREBASE_API_KEY),
                 'process.env.FIREBASE_AUTH_DOMAIN' : JSON.stringify(process.env.FIREBASE_AUTH_DOMAIN),
@@ -70,10 +69,10 @@ module.exports = (env) => {
         ],
         devtool: isProduction ? 'source-map' : 'inline-source-map',
         devServer: {
-            contentBase: path.join(__dirname + '/public'),
+            contentBase: 'public',
             historyApiFallback: true,
-            publicPath: '/dist/',
-            //watchContentBase: true
+            watchContentBase: true
+            //publicPath: '/'
         },
         /* optimization: {
             minimizer: [
